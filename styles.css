@@ -1,0 +1,53 @@
+body {
+  font-family: Arial;
+  background: #0f172a;
+  color: white;
+}
+
+.top-bar {
+  display: flex;
+  gap: 10px;
+  align-items: center;
+}
+
+.signal-btn {
+  background: #3b82f6;
+  padding: 6px 10px;
+  border-radius: 8px;
+  cursor: pointer;
+}
+
+.panel {
+  margin-top: 10px;
+  background: #1e293b;
+  padding: 15px;
+  border-radius: 12px;
+  width: 260px;
+}
+
+.hidden {
+  display: none;
+}
+
+.signal {
+  font-size: 20px;
+  margin: 10px 0;
+  font-weight: bold;
+}
+
+.info {
+  font-size: 13px;
+  color: #94a3b8;
+}
+
+.bar {
+  height: 8px;
+  background: #334155;
+  border-radius: 10px;
+  margin-top: 10px;
+}
+
+.fill {
+  height: 100%;
+  width: 0%;
+}
