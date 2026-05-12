@@ -1,27 +1,58 @@
-<div class="top-bar">
-  <div class="price-box">
-    BTC: $<span id="price">...</span>
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>BTC Dashboard – Bitvavo</title>
+
+  <!-- Chart.js -->
+  <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+
+  <!-- Styles -->
+  <link rel="stylesheet" href="assent/styles.css" />
+</head>
+<body>
+  <div class="app">
+    <header class="header">
+      <h1>BTC/EUR Dashboard</h1>
+      <p>Bitvavo · Live‑Preis, Chart & Alarm</p>
+    </header>
+
+    <main class="main">
+      <section class="top-row">
+        <div class="card">
+          <h2>Aktueller Preis</h2>
+          <div class="price-row">
+            <span id="currentPrice">–</span>
+            <span class="price-label">BTC/EUR</span>
+          </div>
+          <div class="status" id="wsStatus">WebSocket: Verbinde…</div>
+        </div>
+
+        <div class="card">
+          <h2>Preisalarm</h2>
+          <label for="alarmInput">Alarm bei Preis ≥</label>
+          <div class="alarm-row">
+            <input
+              type="number"
+              id="alarmInput"
+              placeholder="z.B. 60000"
+              step="100"
+            />
+            <span>€</span>
+          </div>
+          <button id="setAlarmBtn">Alarm setzen</button>
+          <div class="status" id="alarmStatus">Kein Alarm gesetzt.</div>
+        </div>
+      </section>
+
+      <section class="card chart-card">
+        <h2>BTC/EUR Chart (1m Candles – Close)</h2>
+        <canvas id="btcChart"></canvas>
+      </section>
+    </main>
   </div>
 
-  <div id="signalBtn" class="signal-btn" onclick="togglePanel()">
-    ⚡
-  </div>
-</div>
-
-<div id="signalPanel" class="panel hidden">
-  <canvas id="chart" height="100"></canvas>
-
-  <div class="signal" id="signal">...</div>
-
-  <div class="info">RSI: <span id="rsi">...</span></div>
-  <div class="info">Trend: <span id="trend">...</span></div>
-
-  <div class="bar">
-    <div class="fill" id="confidence"></div>
-  </div>
-</div>
-
-<!-- Chart.js CDN -->
-<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
-<script src="script.js"></script>
-``
+  <!-- App Logic -->
+  <script src="assent/scripts.js"></script>
+</body>
+</html>
