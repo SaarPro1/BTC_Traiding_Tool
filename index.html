@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+  <meta charset="UTF-8" />
+  <title>BTC Dashboard – Bitvavo</title>
+  <!-- Styles -->
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+
+<div class="app">
+  <header class="header">
+    <h1>BTC/EUR Dashboard</h1>
+    <p>Bitvavo · Live‑Preis, Chart & Alarm</p>
+  </header>
+</div>
+
+  <main class="main">
+    <section class="top-row">
+      <div class="card">
+        <h2>Aktueller Preis</h2>
+        <div class="price-row">
+          <!-- HIER GEÄNDERT: ID von currentPrice zu btc-price gewechselt -->
+          <span id="btc-price">–</span>
+          <span class="price-label">BTC/EUR</span>
+        </div>
+        <div class="status" id="wsStatus">API: Verbunden</div>
+      </div>
+
+      <div class="card">
+        <h2>Preisalarm</h2>
+        <label for="alarmInput">Alarm bei Preis ≥</label>
+        <div class="alarm-row">
+          <input type="number" id="alarmInput" placeholder="z.B. 60000" step="100" />
+          <span>€</span>
+        </div>
+        <button id="setAlarmBtn">Alarm setzen</button>
+        <div class="status" id="alarmStatus">Kein Alarm gesetzt.</div>
+      </div>
+    </section>
+
+    <!-- Das Retro-Signal-Fenster sitzt sauber in der unteren Reihe -->
+    <section class="bottom-row">
+      <div class="window">
+        <div class="title-bar">
+          <span>BTC_Signal_Core</span>
+          <span>X</span>
+        </div>
+        <div class="window-body">
+          <div class="signal-box" id="signal-box">Signal: Initialisiere...</div>
+        </div>
+      </div>
+    </section>
+
+    <!-- Die Chart-Karte bleibt jetzt dank CSS absolut stabil -->
+    <section class="card chart-card">
+      <h2>BTC/EUR Chart (1m Candles – Close)</h2>
+      <canvas id="btcChart"></canvas>
+    </section>
+  </main>
+</body>
+<!-- HIER GEÄNDERT: Chart.js MUSS zwingend vor deiner index.js geladen werden! -->
+<script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+<!-- Erst danach deine eigene App Logic laden -->
+<script src="index.js"></script>
+<footer class="footer">
+  <h3>Ist eine Kleine Tool zum BTC zu Traden, es sind Keine Finanzberatung.
+  <br>Die dargestellten Signale basieren auf algorithmischer Analyse und stellen keine Kauf- oder Verkaufsempfehlung dar.
+  <br> Investitionen in Kryptowährungen sind mit Risiko verbunden.
+  </h3>
+</footer>
+</html>

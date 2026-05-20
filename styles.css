@@ -1,0 +1,113 @@
+:root {
+  --bg: #f5f2eb;               /* Warmes Sand-Weiß / Creme */
+  --card-bg: #ffffff;          /* Reines Weiß für die Karten-Inhalte */
+  --accent: #ac932d;           /* Softes Terrakotta / Pastell-Braun */
+  --accent-soft: #f0e6df;      /* Sehr helles Pastell-Braun für Hintergründe */
+  --text-main: #4a443f;        /* Dunkles Schokobraun statt hartem Schwarz */
+  --text-muted: #3f0e50;       /* Mattes Graubraun für Beschriftungen */
+
+  /* Sanfte Pastelltöne für Signale */
+  --danger: #e8a7a1;           /* Softes Pastell-Rot / Koralle */
+  --success: #a8c3a1;          /* Sanftes Salbeigrün */
+  --neutral-box: #eaddca;      /* Helles Mandel-Braun für die Signal-Box */
+
+  --border-radius: 16px;
+  --shadow: 0 10px 30px rgba(74, 68, 63, 0.05); /* Sehr softer, warmer Schatten */
+}
+
+* {
+  box-sizing: border-box;
+  justify-content: center;
+  align-items: center;
+}
+
+body {
+  margin: 5px;
+  padding: 5px;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+  background: linear-gradient(135deg, #f5f2eb, #e8e2d5); /* Warmer, neutraler Pastell-Verlauf */
+  color: var(--text-main);
+  background: -moz-linear-gradient(135deg, #4c2c67, #e5ba64);
+}
+
+/* ==========================================================================
+   REPARATUR & FARB-UPGRADE FÜR DIE ELEMENTE
+   ========================================================================== */
+
+.card {
+  background: var(--card-bg);
+  border-radius: var(--border-radius);
+  padding: 20px;
+  box-shadow: var(--shadow);
+  border: 1px solid rgba(74, 68, 63, 0.04);
+}
+
+.footer {
+color: var(--text-muted);
+}
+/* Der Button im warmen Pastell-Braun */
+button {
+  padding: 10px 18px;
+  border-radius: 12px; /* Etwas kantiger, passend zu den Inputs */
+  border: none;
+  background: var(--accent);
+  color: #ffffff;
+  font-weight: 600;
+  cursor: pointer;
+  box-shadow: 0 4px 12px rgba(196, 139, 113, 0.2);
+  transition: all 0.15s ease;
+}
+
+button:hover {
+  background: #b57a60; /* Leicht dunkleres Terrakotta */
+  transform: translateY(-1.5px);
+  box-shadow: 0 6px 16px rgba(196, 139, 113, 0.3);
+}
+
+/* Das ehemalige Retro-Fenster gliedert sich jetzt perfekt ein */
+.window {
+  justify-content: center;
+  align-items: center;
+  background-color: var(--accent-soft);
+  border-radius: var(--border-radius);
+  box-shadow: var(--shadow);
+  overflow: hidden;
+  border: 1px solid rgba(196, 139, 113, 0.15);
+
+}
+
+.title-bar {
+  background: var(--accent);
+  color: white;
+  padding: 10px 16px;
+  font-weight: 600;
+  font-size: 0.95rem;
+}
+
+.window-body {
+  padding: 20px;
+  background-color: var(--card-bg);
+  justify-content: center;
+  align-items: center;
+}
+
+.signal-box {
+  background-color: rgb(75 24 105 / 0.83);
+  padding: 14px;
+  border-radius: 10px;
+  border: 1px solid rgba(74, 68, 63, 0.08);
+  text-align: center;
+}
+
+/* Stabile Chart-Größe bleibt erhalten */
+.chart-card {
+  display: flex;
+  flex-direction: column;
+  max-height: 400px;
+}
+
+.chart-card canvas {
+  width: 100% !important;
+  height: 300px !important;
+  max-height: 300px;
+}
